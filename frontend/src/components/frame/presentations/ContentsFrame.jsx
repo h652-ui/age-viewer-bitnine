@@ -71,7 +71,7 @@ const ContentFrame = ({
       refKey={refKey}
     >
       <div
-        className={`${FrameStyles.FlexContentWrapper} ${FrameStyles.DefaultLimitWrapper}`}
+        className={`${FrameStyles.FlexContentWrapper} ${FrameStyles.DefaultLimitWrapper} ${FrameStyles.BGColor}`}
         id={refKey}
         style={{ padding: 'initial' }}
       >

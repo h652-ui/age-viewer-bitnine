@@ -22,11 +22,12 @@ import CodeMirror from '@uiw/react-codemirror';
 import 'codemirror/keymap/sublime';
 import 'codemirror/addon/display/placeholder';
 import 'codemirror/theme/ambiance-mobile.css';
+import 'codemirror/theme/abcdef.css';
 import './CodeMirror.scss';
 import PropTypes from 'prop-types';
 
 const CodeMirrorWrapper = ({
-  value, onChange, commandHistory, onClick,
+  theme, value, onChange, commandHistory, onClick,
 }) => {
   const [commandHistoryIndex, setCommandHistoryIndex] = useState(commandHistory.length);
   const codeMirrorRef = useRef();
@@ -39,6 +40,7 @@ const CodeMirrorWrapper = ({
       options={{
         keyMap: 'sublime',
         mode: 'cypher',
+        theme: theme === 'dark' ? 'abcdef' : 'ambiance',
         placeholder: 'Create a query...',
         tabSize: 4,
         lineNumbers: true,
@@ -123,6 +125,7 @@ const CodeMirrorWrapper = ({
 };
 
 CodeMirrorWrapper.propTypes = {
+  theme: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
   commandHistory: PropTypes.arrayOf(PropTypes.string).isRequired,

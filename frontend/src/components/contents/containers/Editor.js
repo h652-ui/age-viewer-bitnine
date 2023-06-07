@@ -24,12 +24,14 @@ import { getConnectionStatus } from '../../../features/database/DatabaseSlice';
 import { executeCypherQuery } from '../../../features/cypher/CypherSlice';
 import { addCommandHistory, addCommandFavorites, setCommand } from '../../../features/editor/EditorSlice';
 import { toggleMenu } from '../../../features/menu/MenuSlice';
+import { changeTheme } from '../../../features/setting/SettingSlice';
 import { getMetaData } from '../../../features/database/MetadataSlice';
 import { setLabel } from '../../../features/layout/LayoutSlice';
 
 import Editor from '../presentations/Editor';
 
 const mapStateToProps = (state) => ({
+  theme: state.setting.theme,
   alertList: state.alerts,
   database: state.database,
   command: state.editor.command,
@@ -52,6 +54,7 @@ const mapDispatchToProps = {
   toggleMenu,
   getMetaData,
   setLabel,
+  changeTheme,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Editor);

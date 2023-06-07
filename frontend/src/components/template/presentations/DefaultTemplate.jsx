@@ -71,7 +71,6 @@ const DefaultTemplate = ({
       maxDataOfGraph,
       maxDataOfTable,
     };
-
     Object.keys(stateValues).forEach((key) => {
       let fromCookieValue = loadFromCookie(key);
 
@@ -93,7 +92,7 @@ const DefaultTemplate = ({
   });
 
   return (
-    <div className="default-template">
+    <div className={`default-template ${theme === 'dark' ? 'bg-dark' : 'bg-light'}`}>
       { isOpen && <Modal /> }
       <input
         type="radio"
@@ -116,7 +115,7 @@ const DefaultTemplate = ({
           <Button onClick={() => setOpen(true)}>
             <FontAwesomeIcon icon={faBars} />
           </Button>
-          <BuilderContainer open={open} setOpen={setOpen} finder={finder} />
+          <BuilderContainer open={open} setOpen={setOpen} finder={finder} theme={theme} />
         </div>
         <div className="editor-division wrapper-extension-padding">
 

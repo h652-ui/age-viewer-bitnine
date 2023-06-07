@@ -4,7 +4,9 @@ import React from 'react';
 import uuid from 'react-uuid';
 import KeyWordFinder from '../../features/query_builder/KeyWordFinder';
 
-const BuilderSelection = ({ finder, setQuery, currentWord }) => {
+const BuilderSelection = ({
+  theme, finder, setQuery, currentWord,
+}) => {
   const handleClick = (e) => {
     const selectedVal = e.target.getAttribute('data-val');
     setQuery(selectedVal);
@@ -14,7 +16,7 @@ const BuilderSelection = ({ finder, setQuery, currentWord }) => {
       {
     finder?.getConnectedNames(currentWord).map(
       (element) => (
-        <ListGroup.Item key={uuid()}>
+        <ListGroup.Item key={uuid()} className={`${theme === 'dark' ? 'bg-dark border-light' : ''}`}>
           <Button
             size="small"
             onClick={handleClick}
@@ -31,6 +33,7 @@ const BuilderSelection = ({ finder, setQuery, currentWord }) => {
 };
 
 BuilderSelection.propTypes = {
+  theme: PropTypes.string.isRequired,
   finder: PropTypes.shape(KeyWordFinder).isRequired,
   setQuery: PropTypes.func.isRequired,
   currentWord: PropTypes.string.isRequired,

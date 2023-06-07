@@ -28,21 +28,21 @@ const StyleTextRight = {
 };
 const StyleTextLeft = { fontSize: '13px', fontWeight: 'bold' };
 
-export const ColoredLine = () => (
+export const ColoredLine = (theme) => (
   <hr
     style={{
-      color: '#B0B0B0',
-      backgroundColor: '#B0B0B0',
+      color: theme === 'dark' ? '#FFFFFF' : '#C4C4C4',
+      backgroundColor: theme === 'dark' ? '#FFFFFF' : '#C4C4C4',
       marginTop: 0,
       height: 0.3,
     }}
   />
 );
 
-export const VerticalLine = () => (
+export const VerticalLine = (theme) => (
   <div
     style={{
-      backgroundColor: '#C4C4C4',
+      backgroundColor: theme === 'dark' ? '#FFFFFF' : '#C4C4C4',
       width: '1px',
       height: '120px',
       marginTop: '37px',
@@ -51,11 +51,11 @@ export const VerticalLine = () => (
   />
 );
 
-export const HorizontalLine = () => (
+export const HorizontalLine = (theme) => (
   <div
     className="horizontalLine"
     style={{
-      border: '1px solid #C4C4C4',
+      border: theme === 'dark' ? '1px solid #FFFFFF' : '1px solid #C4C4C4',
       opacity: '1',
       width: '80%',
       height: '0',

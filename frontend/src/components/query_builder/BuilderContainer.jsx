@@ -11,7 +11,9 @@ import KeyWordFinder from '../../features/query_builder/KeyWordFinder';
 import { setCommand } from '../../features/editor/EditorSlice';
 import './BuilderContainer.scss';
 
-const BuilderContainer = ({ open, setOpen, finder }) => {
+const BuilderContainer = ({
+  theme, open, setOpen, finder,
+}) => {
   const [query, setQuery] = useState('');
   const [currentWord, setCurrentWord] = useState('');
   const [selectedGraph, setSelectedGraph] = useState('');
@@ -46,10 +48,12 @@ const BuilderContainer = ({ open, setOpen, finder }) => {
   };
   return (
     <Drawer
-      title="Query Generator"
+      title={<span style={{ color: theme === 'dark' ? 'white' : '' }}>Query Generator</span>}
       open={open}
       onClose={() => setOpen(!open)}
       placement="left"
+      bodyStyle={{ background: theme === 'dark' ? '#343a40' : 'white' }}
+      headerStyle={{ background: theme === 'dark' ? '#343a40' : 'white' }}
     >
       <Select
         id="graph-selection"
@@ -74,6 +78,7 @@ const BuilderContainer = ({ open, setOpen, finder }) => {
       <Space />
       <div className="selection-builder">
         <BuilderSelection
+          theme={theme}
           finder={finder}
           setQuery={handleSetQuery}
           currentWord={currentWord}
@@ -87,6 +92,7 @@ const BuilderContainer = ({ open, setOpen, finder }) => {
   );
 };
 BuilderContainer.propTypes = {
+  theme: PropTypes.string.isRequired,
   open: PropTypes.bool.isRequired,
   setOpen: PropTypes.func.isRequired,
   finder: PropTypes.shape(KeyWordFinder).isRequired,

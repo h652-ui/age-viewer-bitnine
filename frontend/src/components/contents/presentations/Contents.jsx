@@ -24,7 +24,7 @@ import FramesContainer from '../containers/Frames';
 import styles from './Contents.module.scss';
 
 const Contents = ({
-  database, isActive, getConnectionStatus, getMetaData, currentGraph,
+  theme, database, isActive, getConnectionStatus, getMetaData, currentGraph,
 }) => {
   const dispatch = useDispatch();
 
@@ -42,7 +42,7 @@ const Contents = ({
   }, [database.status]);
 
   return (
-    <div className={`${styles.Content} ${isActive ? styles.Expanded : ''}`}>
+    <div className={`border-blue-700 ${styles.Content} ${isActive ? styles.Expanded : ''} ${theme === 'dark' ? 'bg-dark' : 'bg-light'}`}>
       <div>
         <FramesContainer />
       </div>
@@ -51,6 +51,7 @@ const Contents = ({
 };
 
 Contents.propTypes = {
+  theme: PropTypes.string.isRequired,
   database: PropTypes.shape({
     status: PropTypes.string.isRequired,
   }).isRequired,

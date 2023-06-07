@@ -23,6 +23,7 @@ import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlayCircle } from '@fortawesome/free-regular-svg-icons';
 import { Col, Row } from 'antd';
+import styles from './ServerConnectFrame.module.scss';
 import Frame from '../Frame';
 
 const ServerDisconnectFrame = ({
@@ -55,7 +56,7 @@ const ServerDisconnectFrame = ({
     >
       <Row>
         <Col span={6}>
-          <h3>Disconnected Succesfully</h3>
+          <h3 className={`${styles.BGColor}`}>Disconnected Succesfully</h3>
           <p>You are successfully disconnected from Database.</p>
         </Col>
         <Col span={18}>

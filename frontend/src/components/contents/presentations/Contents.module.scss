@@ -31,3 +31,14 @@
 .Content.Expanded {
   width: 100%;
 }
+
+.darkTheme{
+  --clr: white;
+  --bg-clr: #343a40;
+}
+
+.lightTheme{
+  --clr: #343a40;
+  --bg-clr: white;
+}
+

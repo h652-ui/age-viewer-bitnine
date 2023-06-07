@@ -23,9 +23,9 @@
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: var(--clr);
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, .125);
+  border: 1px solid var(--clr);
   border-radius: .25rem;
   margin-top: 1rem;
   overflow-y: auto;
@@ -55,11 +55,11 @@
 .FrameHeader {
   height: auto;
   align-items: center;
-  background-color: rgba(0, 0, 0, .03);
+  background-color: var(--clr);
   padding: 10px 10px 10px 30px;
-  border-bottom: 1px solid rgba(0, 0, 0, .125);
+  border-bottom: 1px solid var(--clr);
   display: flex;
-  color: #6c757d;
+  color: var(--clr);
 }
 
 .FrameHeaderText {
@@ -67,7 +67,7 @@
 }
 
 .FrameButton {
-  color: gray;
+  color: var(--clr);
 }
 
 .FrameButton:focus {
@@ -84,6 +84,11 @@
 
 .ButtonArea {
   // margin: auto 18%;
+}
+
+.BGColor{
+  color: var(--clr);
+  background-color: var(--bg-clr);
 }
 
 .FullScreen {

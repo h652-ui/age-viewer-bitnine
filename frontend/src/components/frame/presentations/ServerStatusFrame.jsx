@@ -30,6 +30,7 @@ import Frame from '../Frame';
 import FrameStyles from '../Frame.module.scss';
 import Tutorial from '../../modal/containers/Tutorial';
 import { openTutorial } from '../../../features/modal/ModalSlice';
+import styles from './ServerConnectFrame.module.scss';
 
 const ServerStatusFrame = ({
   refKey, isPinned, reqString, serverInfo, data, isTutorial,
@@ -52,11 +53,11 @@ const ServerStatusFrame = ({
       return (
         <>
           { isTutorial && <Tutorial />}
-          <div className={FrameStyles.FlexContentWrapper}>
+          <div className={`${FrameStyles.FlexContentWrapper} ${FrameStyles.BGColor}`}>
             <InitGraphModal show={showModal} setShow={setShow} />
             <Row>
               <Col span={6}>
-                <h3>Connection Status</h3>
+                <h3 className={`${styles.BGColor}`}>Connection Status</h3>
                 <p>This is your current connection information.</p>
               </Col>
               <Col span={18}>

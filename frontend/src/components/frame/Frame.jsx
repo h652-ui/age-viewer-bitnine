@@ -70,8 +70,8 @@ const Frame = ({
   // );
 
   return (
-    <div className={`${styles.Frame} ${isFullScreen ? styles.FullScreen : ''}`}>
-      <div className={styles.FrameHeader}>
+    <div className={`${styles.Frame} ${isFullScreen ? styles.FullScreen : ''} ${styles.BGColor}`}>
+      <div className={`${styles.FrameHeader} ${styles.BGColor}`}>
         <div className={styles.FrameHeaderText}>
           {'$ '}
           <strong>
@@ -88,7 +88,7 @@ const Frame = ({
             }}
           />
         </div>
-        <div className={styles.ButtonArea}>
+        <div className={`${styles.ButtonArea} ${styles.darkTheme}`}>
           {!isTable && onThick ? (
             <Popover placement="bottomLeft" content={thicnessMenu} trigger="click">
               <Button

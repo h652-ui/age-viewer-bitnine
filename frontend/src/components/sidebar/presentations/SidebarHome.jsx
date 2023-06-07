@@ -351,6 +351,7 @@ DBMSText.propTypes = {
 };
 
 const SidebarHome = ({
+  theme,
   edges,
   nodes,
   currentGraph,
@@ -384,26 +385,26 @@ const SidebarHome = ({
 
   return (
     <div className="sidebar-home">
-      <div className="sidebar sidebar-body">
+      <div className={`sidebar sidebar-body ${theme === 'dark' ? 'bg-dark text-light' : 'bg-light text-dark'}`}>
         <div className="form-group sidebar-item">
           <b>Node Label</b>
           <br />
           <NodeList nodes={nodes} setCommand={setCommand} />
         </div>
-        <VerticalLine />
+        <VerticalLine theme={theme} />
         <div className="form-group sidebar-item">
           <b>Edge Label</b>
           <br />
           <EdgeList edges={edges} setCommand={setCommand} />
         </div>
-        <VerticalLine />
+        <VerticalLine theme={theme} />
         <div className="form-group sidebar-item">
           <b>Properties</b>
           <br />
           <PropertyList propertyKeys={propertyKeys} setCommand={setCommand} />
         </div>
         <div id="lastHorizontalLine">
-          <VerticalLine />
+          <VerticalLine theme={theme} />
         </div>
         { isLabel && (
           <>
@@ -418,12 +419,12 @@ const SidebarHome = ({
               />
             </div>
             <div id="lastHorizontalLine">
-              <VerticalLine />
+              <VerticalLine theme={theme} />
             </div>
           </>
         ) }
       </div>
-      <div className="sidebar-item-disconnect-outer">
+      <div className={`sidebar-item-disconnect-outer ${theme === 'dark' ? 'bg-dark text-light' : 'bg-light text-dark'}`}>
         <div className="form-group sidebar-item-disconnect">
           <div className="sidebar-item-disconnect-buttons">
             <button
@@ -441,7 +442,7 @@ const SidebarHome = ({
             <br />
             <b>Refresh</b>
           </div>
-          <HorizontalLine />
+          <HorizontalLine theme={theme} />
           <div className="sidebar-item-disconnect-buttons">
             <button
               className="frame-head-button close_session btn btn-link"
@@ -468,7 +469,7 @@ const SidebarHome = ({
           </div>
           { !isLabel && (
             <>
-              <HorizontalLine />
+              <HorizontalLine theme={theme} />
               <div className="sidebar-item-disconnect-buttons">
                 <GraphSelectDropdown
                   currentGraph={currentGraph}
@@ -486,6 +487,7 @@ const SidebarHome = ({
 };
 
 SidebarHome.propTypes = {
+  theme: PropTypes.string.isRequired,
   edges: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     cnt: PropTypes.number,

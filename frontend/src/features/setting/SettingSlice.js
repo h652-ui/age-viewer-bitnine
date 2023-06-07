@@ -59,8 +59,10 @@ const SidebarSettingSlice = createSlice({
     changeTheme: {
       reducer: (state, action) => {
         state.theme = action.payload.theme;
+        saveToCookie('theme', state.theme);
+        document.body.className = state.theme;
       },
-      prepare: (event) => ({ payload: { theme: event.target.value } }),
+      prepare: (value) => ({ payload: { theme: value } }),
     },
     changeMaxNumOfFrames: {
       reducer: (state, action) => {

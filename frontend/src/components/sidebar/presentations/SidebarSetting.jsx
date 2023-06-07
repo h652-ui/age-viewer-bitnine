@@ -42,7 +42,7 @@ const SidebarSetting = ({
     <div className="sidebar sidebar-body">
       <div className="form-group">
         <b>Themes</b>
-        <ColoredLine />
+        <ColoredLine theme={theme} />
         <select
           className="form-control theme-switcher"
           value={theme}
@@ -54,7 +54,7 @@ const SidebarSetting = ({
       </div>
       <div className="form-group pt-4">
         <b>Frames</b>
-        <ColoredLine />
+        <ColoredLine theme={theme} />
         <fieldset className="form-group">
           <SubLabelLeft label="Maximum Number of Frames:" classes="py-1" />
           <input
@@ -82,7 +82,7 @@ const SidebarSetting = ({
       </div>
       <div className="form-group pt-4">
         <b>Data Display</b>
-        <ColoredLine />
+        <ColoredLine theme={theme} />
         <fieldset className="form-group">
           <SubLabelLeft label="Maximum Data of Graph Visualization" classes="py-1" />
           <input

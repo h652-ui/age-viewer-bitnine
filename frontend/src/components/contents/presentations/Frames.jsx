@@ -28,8 +28,10 @@ import CypherGraphResult from '../../frame/containers/CypherGraphResultContainer
 import CypherResult from '../../frame/containers/CypherResultContainers';
 import CSV from '../../csv';
 import { setting } from '../../../conf/config';
+import styles from './Contents.module.scss';
 
 const Frames = ({
+  theme,
   database,
   frameList,
   addFrame,
@@ -139,7 +141,7 @@ const Frames = ({
   }, [frameList, queryResult]);
 
   return (
-    <div className="container-fluid frame-area pt-3">
+    <div className={`container-fluid frame-area pt-3 ${theme === 'dark' ? styles.darkTheme : styles.lightTheme}`}>
       {frames}
     </div>
   );
@@ -150,6 +152,7 @@ Frames.defaultProps = {
 };
 
 Frames.propTypes = {
+  theme: PropTypes.string.isRequired,
   database: PropTypes.shape({
     status: PropTypes.string.isRequired,
     host: PropTypes.string.isRequired,

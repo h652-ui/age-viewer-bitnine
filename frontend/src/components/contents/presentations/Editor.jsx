@@ -22,7 +22,9 @@ import { useDispatch } from 'react-redux';
 import uuid from 'react-uuid';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimesCircle, faToggleOff, faToggleOn } from '@fortawesome/free-solid-svg-icons';
+import {
+  faTimesCircle, faToggleOff, faToggleOn, faMoon, faSun,
+} from '@fortawesome/free-solid-svg-icons';
 import store from '../../../app/store';
 import AlertContainers from '../../alert/containers/AlertContainers';
 import CodeMirror from '../../editor/containers/CodeMirrorWapperContainer';
@@ -32,6 +34,7 @@ import IconPlay from '../../../icons/IconPlay';
 import { getMetaData } from '../../../features/database/MetadataSlice';
 
 const Editor = ({
+  theme,
   setCommand,
   activeRequests,
   command,
@@ -47,6 +50,7 @@ const Editor = ({
   toggleMenu,
   setLabel,
   isLabel,
+  changeTheme,
   // addCommandFavorites,
 }) => {
   const dispatch = useDispatch();
@@ -145,7 +149,7 @@ const Editor = ({
         <div className="container-fluid editor-area card-header">
           <div className="input-group input-style">
 
-            <div id="codeMirrorEditor" className="form-control col-11 editor-code-wrapper">
+            <div id="codeMirrorEditor" className={`form-control col-11 editor-code-wrapper ${theme === 'dark' ? 'bg-dark' : 'bg-light'}`}>
               <CodeMirror
                 onClick={onClick}
                 value={command}
@@ -204,6 +208,17 @@ const Editor = ({
                   size="2x"
                 />
               </button>
+              <button
+                className="frame-head-button btn btn-link"
+                type="button"
+                onClick={() => { dispatch(changeTheme(theme === 'dark' ? 'default' : 'dark')); }}
+                title="Run Query"
+              >
+                <FontAwesomeIcon
+                  icon={theme === 'default' ? faMoon : faSun}
+                  size="2x"
+                />
+              </button>
             </div>
           </div>
         </div>
@@ -214,6 +229,7 @@ const Editor = ({
 };
 
 Editor.propTypes = {
+  theme: PropTypes.string.isRequired,
   setCommand: PropTypes.func.isRequired,
   activeRequests: PropTypes.arrayOf(PropTypes.string).isRequired,
   command: PropTypes.string.isRequired,
@@ -239,6 +255,7 @@ Editor.propTypes = {
   update: PropTypes.bool.isRequired,
   setLabel: PropTypes.func.isRequired,
   isLabel: PropTypes.bool.isRequired,
+  changeTheme: PropTypes.func.isRequired,
   // addCommandFavorites: PropTypes.func.isRequired,
 };
 

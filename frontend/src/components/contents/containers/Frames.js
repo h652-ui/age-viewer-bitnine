@@ -22,6 +22,7 @@ import Frames from '../presentations/Frames';
 import { addFrame } from '../../../features/frame/FrameSlice';
 
 const mapStateToProps = (state) => ({
+  theme: state.setting.theme,
   frameList: state.frames,
   queryResult: state.cypher.queryResult,
   database: state.database,

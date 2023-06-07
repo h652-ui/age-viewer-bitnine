@@ -77,29 +77,29 @@ const ServerConnectFrame = ({
     >
       <Row>
         <Col span={6}>
-          <h3>Connect to Database</h3>
+          <h3 className={`${styles.BGColor}`}>Connect to Database</h3>
           <p>Database access might require an authenticated connection.</p>
         </Col>
         <Col span={18}>
-          <div className={styles.FrameWrapper}>
+          <div className={`${styles.FrameWrapper}`}>
             <Form
               initialValues={FormInitialValue}
               layout="vertical"
               onFinish={connectToDatabase}
             >
-              <Form.Item name="host" label="Connect URL" rules={[{ required: true }]}>
+              <Form.Item name="host" label={<span className={`${styles.BGColor}`}>Connect URL</span>} rules={[{ required: true }]}>
                 <Input placeholder="192.168.0.1" />
               </Form.Item>
-              <Form.Item name="port" label="Connect Port" rules={[{ required: true }]}>
+              <Form.Item name="port" label=<span className={`${styles.BGColor}`}>Connect Port</span> rules={[{ required: true }]}>
                 <InputNumber placeholder="5432" className={styles.FullWidth} />
               </Form.Item>
-              <Form.Item name="database" label="Database Name" rules={[{ required: true }]}>
+              <Form.Item name="database" label=<span className={`${styles.BGColor}`}>Database Name</span> rules={[{ required: true }]}>
                 <Input placeholder="postgres" />
               </Form.Item>
-              <Form.Item name="user" label="User Name" rules={[{ required: true }]}>
+              <Form.Item name="user" label=<span className={`${styles.BGColor}`}>User Name</span> rules={[{ required: true }]}>
                 <Input placeholder="postgres" />
               </Form.Item>
-              <Form.Item name="password" label="Password" rules={[{ required: true }]}>
+              <Form.Item name="password" label=<span className={`${styles.BGColor}`}>Password</span> rules={[{ required: true }]}>
                 <Input.Password placeholder="postgres" />
               </Form.Item>
               <Form.Item>

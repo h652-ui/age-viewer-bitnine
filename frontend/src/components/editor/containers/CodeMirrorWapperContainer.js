@@ -21,6 +21,7 @@ import { connect } from 'react-redux';
 import CodeMirrorWrapper from '../presentations/CodeMirrorWrapper';
 
 const mapStateToProps = (state) => ({
+  theme: state.setting.theme,
   commandHistory: state.editor.commandHistory.slice(
     Math.max((state.editor.commandHistory.length - state.setting.maxNumOfHistories === 0
       ? state.editor.commandHistory.length : state.setting.maxNumOfHistories), 0),

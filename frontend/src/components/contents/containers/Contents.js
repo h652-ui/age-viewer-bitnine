@@ -23,6 +23,7 @@ import { getMetaData/* getMetaChartData */ } from '../../../features/database/Me
 import Contents from '../presentations/Contents';
 
 const mapStateToProps = (state) => ({
+  theme: state.setting.theme,
   database: state.database,
   isActive: state.navigator.isActive,
   currentGraph: state.metadata.currentGraph,

@@ -1,9 +1,9 @@
 # Overview of Dark and Light Mode
 ## Dark Mode
-<img src="[https://img.shields.io/github/license/apache/age-viewer](https://github.com/h652-ui/age-viewer-bitline/blob/main/frontend/public/Dark%20Mode.png)"/>
+<img src="https://github.com/h652-ui/age-viewer-bitline/blob/main/frontend/public/Dark%20Mode.png"/>
 
 ## Light Mode
-<img src="[https://img.shields.io/github/license/apache/age-viewer](https://github.com/h652-ui/age-viewer-bitline/blob/main/frontend/public/Light%20Mode.png)"/>
+<img src="https://github.com/h652-ui/age-viewer-bitline/blob/main/frontend/public/Light%20Mode.png"/>
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
   <a href="https://github.com/apache/age/blob/master/LICENSE">

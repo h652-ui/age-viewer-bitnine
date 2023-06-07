@@ -1,3 +1,10 @@
+# Overview of Dark and Light Mode
+## Dark Mode
+<img src="https://img.shields.io/github/license/apache/age-viewer"/>
+
+## Light Mode
+<img src="https://img.shields.io/github/license/apache/age-viewer"/>
+
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
   <a href="https://github.com/apache/age/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/apache/age-viewer"/>
